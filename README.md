@@ -54,7 +54,7 @@ NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were gener
 
 <h3>General Situation in Brazil:</h3> 
 
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/graphs/cv19_TOTAL_linear_CV_Evolution_Graph_updated.png"/>
+<img src="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/blob/master/graphs/cv19_TOTAL_linear_CV_Evolution_Graph_updated.png"/>
 <img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/graphs/cv19_TOTAL_log_CV_Evolution_Graph_updated.png"/>
 <img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/graphs/cv19_TOTAL_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
 <img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_BR_CV_totalCases_last_updated.png"/>
