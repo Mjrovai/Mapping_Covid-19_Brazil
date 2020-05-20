@@ -1,6 +1,4 @@
 <h1>Mapping in the Time of Pandemic</h1>
-images/Portada_1.png
-
 <img src="images/Portada_1.png">
 <h3> Tracking the pandemic outbreak in Brazil</h3>
 <br>
@@ -56,20 +54,20 @@ NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were gener
 
 <h3>General Situation in Brazil:</h3> 
 
-<img src="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/blob/master/graphs/cv19_TOTAL_linear_CV_Evolution_Graph_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/graphs/cv19_TOTAL_log_CV_Evolution_Graph_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/graphs/cv19_TOTAL_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_BR_CV_totalCases_last_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_BR_CV_deaths_last_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_BR_CV_CFR%5B%25%5D_last_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_BR_CV_TotalCases_per_1M_pop_last_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_BR_CV_Deaths_per_1M_pop_last_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_BR_last_updated.png"/>
+<img src="graphs/cv19_TOTAL_linear_CV_Evolution_Graph_updated.png"/>
+<img src="graphs/cv19_TOTAL_log_CV_Evolution_Graph_updated.png"/>
+<img src="graphs/cv19_TOTAL_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
+<img src="images/!cv19_BR_CV_totalCases_last_updated.png"/>
+<img src="images/!cv19_BR_CV_deaths_last_updated.png"/>
+<img src="images/!cv19_BR_CV_CFR%5B%25%5D_last_updated.png"/>
+<img src="images/!cv19_BR_CV_TotalCases_per_1M_pop_last_updated.png"/>
+<img src="images/!cv19_BR_CV_Deaths_per_1M_pop_last_updated.png"/>
+<img src="images/!cv19_BR_last_updated.png"/>
 Specific situation in the Main States
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_SP_last_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_RJ_last_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_MG_last_updated.png"/>
-<img src="https://github.com/Mjrovai/Python4DS/blob/master/20_Mapping_Covid19_Brazil/images/!cv19_CE_last_updated.png"/>
+<img src="images/!cv19_SP_last_updated.png"/>
+<img src="images/!cv19_RJ_last_updated.png"/>
+<img src="images/!cv19_MG_last_updated.png"/>
+<img src="images/!cv19_CE_last_updated.png"/>
 <br>
 # Mapping_Covid-19_Brazil
 # Mapping_Covid-19_Brazil
