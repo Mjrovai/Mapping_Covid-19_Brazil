@@ -100,7 +100,7 @@ def plot_cases(data,
     if show == True:
         fig.show()
 
-# -------------------------------------------------------------------------------------    
+# -------------------------------------------------------------------------------------
 
 def plot_mov_ave_deaths_last_week(data,
                city,
@@ -176,7 +176,7 @@ def plot_mov_ave_deaths_last_week(data,
                         '_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png')
     if show == True:
         fig.show()
-# -------------------------------------------------------------------------------------    
+# -------------------------------------------------------------------------------------
 
 def data_cleanup(array):
     L = []
@@ -195,7 +195,7 @@ def get_wordometers_covid(country, worldmetersLink):
     today = datetime.datetime.today()
     try:
         html_page = requests.get(worldmetersLink)
-    except requests.exceptions.RequestException as e: 
+    except requests.exceptions.RequestException as e:
         print(e) #ConnectionError
     bs = BeautifulSoup(html_page.content, 'html.parser')
     search = bs.select("div tbody tr td")
@@ -228,10 +228,10 @@ def get_brazil_cv_data(date):
     dt_tm = pd.read_csv(url_tm, error_bad_lines=False)
     print("\nToday is {}/{}/{}. Dataset with {} observations.\n".format(
         date.year, date.month, date.day, dt.shape[0]))
-    
+
     file = '../data/cases-brazil-cities-'+str(date.day)+'-'+str(date.month)+'-'+str(date.year)+'.csv'
     dt.to_csv(file)
-    
+
     dt.rename(columns={'ibgeID':'COD. IBGE'}, inplace=True)
     total_cases = dt.totalCases.sum()
     deaths = dt.deaths.sum()
@@ -240,10 +240,10 @@ def get_brazil_cv_data(date):
     date.month, date.day, total_cases, deaths, cfr))
     dt['CFR[%]'] = round((dt.deaths/dt.totalCases)*100, 2)
     dt.fillna(0, inplace=True)
-    
+
     dt_state = dt.groupby('state')[['deaths','totalCases']].sum().reset_index()
     dt_state['CFR[%]'] = round((dt_state.deaths/dt_state.totalCases)*100, 2)
-    
+
     dt_tm_city = dt_tm.loc[(dt_tm['state'] != 'TOTAL')].copy()
     dt_tm_city.rename(columns={'ibgeID':'COD. IBGE'}, inplace=True)
 
@@ -254,13 +254,14 @@ Functions for getting Brazil Geodata
 '''
 
 def load_geodata():
+    path =  '/Users/mjrovai/Dropbox/2020/10_Data_Science/10_Corona_Virus_Analysis/10_CV-19_Brazil_Evolution'
     # Brazil by States
     br_shp = gpd.read_file(
-        '../data/10_geodata/20_Brazil_by_State/Brazil_Dataset_By_State.shp',
+        path + '/data/10_geodata/20_Brazil_by_State/Brazil_Dataset_By_State.shp',
         encoding='utf-8')
 
     br_cities = gpd.read_file(
-        '../data/10_geodata/10_Brazil_by_City/Brazil_Dataset_By_City.shp',
+        path + '/data/10_geodata/10_Brazil_by_City/Brazil_Dataset_By_City.shp',
         encoding='utf-8')
 
     # Brazil by States
@@ -278,36 +279,37 @@ def load_geodata():
     print('Average Demografic Density : {:,} hab/km2 (aprox.)'.format(
         round(
             (br_cities['POP_2019'].sum()) / (br_cities['AREA APROX'].sum()))))
-    
+
     return br_shp, br_cities
 
 def load_roads():
+    path =  '/Users/mjrovai/Dropbox/2020/10_Data_Science/10_Corona_Virus_Analysis/10_CV-19_Brazil_Evolution'
     sp_motorway = gpd.read_file(
-        '../data/10_geodata/35_main_roads_by_state/sp_motorway.shp',
+        path + '/data/10_geodata/35_main_roads_by_state/sp_motorway.shp',
         encoding='utf-8')
     sp_primary = gpd.read_file(
-        '../data/10_geodata/35_main_roads_by_state/sp_primary.shp',
+        path + '/data/10_geodata/35_main_roads_by_state/sp_primary.shp',
         encoding='utf-8')
 
     rj_motorway = gpd.read_file(
-        '../data/10_geodata/35_main_roads_by_state/rj_motorway.shp',
+        path + '/data/10_geodata/35_main_roads_by_state/rj_motorway.shp',
         encoding='utf-8')
     rj_primary = gpd.read_file(
-        '../data/10_geodata/35_main_roads_by_state/rj_primary.shp',
+        path + '/data/10_geodata/35_main_roads_by_state/rj_primary.shp',
         encoding='utf-8')
 
     mg_motorway = gpd.read_file(
-        '../data/10_geodata/35_main_roads_by_state/mg_motorway.shp',
+        path + '/data/10_geodata/35_main_roads_by_state/mg_motorway.shp',
         encoding='utf-8')
     mg_primary = gpd.read_file(
-        '../data/10_geodata/35_main_roads_by_state/mg_primary.shp',
+        path + '/data/10_geodata/35_main_roads_by_state/mg_primary.shp',
         encoding='utf-8')
 
     ce_motorway = gpd.read_file(
-        '../data/10_geodata/35_main_roads_by_state/ce_motorway.shp',
+        path + '/data/10_geodata/35_main_roads_by_state/ce_motorway.shp',
         encoding='utf-8')
     ce_primary = gpd.read_file(
-        '../data/10_geodata/35_main_roads_by_state/ce_primary.shp',
+        path + '/data/10_geodata/35_main_roads_by_state/ce_primary.shp',
         encoding='utf-8')
     return sp_motorway, sp_primary, rj_motorway, rj_primary, mg_motorway, mg_primary, ce_motorway, ce_primary
 
@@ -341,7 +343,7 @@ def get_Brazil_data(dt, br_shp, br_cities):
         'deaths', 'CFR[%]', 'TotalCases/1M pop', 'Deaths/1M pop'
     ]].reset_index(drop=True)
     dt_city.index += 1
-    file = '../data/20_Covid_Database_Brazil/cv19_Brazil_' + str(
+    file = '../data/Covid_Database_Brazil/cv19_Brazil_' + str(
         date.month) + '-' + str(date.day) + '-' + str(date.year) + '.xlsx'
     dt_city.to_excel(file)
 
@@ -405,7 +407,7 @@ def plt_Brasil_cities(cv_city,
     #file_gif = '../br_images_gif/today_cv19_Brazil.png'
 
     if deaths_only == False:
-        plt.savefig(file, dpi=300)
+        #plt.savefig(file, dpi=300)
         plt.savefig(file_today, dpi=300)
         #plt.savefig(file_gif, dpi=200)
 
@@ -424,7 +426,7 @@ def plt_Brasil_cv_metrics(cv_city_pnt,
                      color='orange',
                      markersize=n * cv_city_pnt[metrics],
                      alpha=.5)
-    
+
     if metrics == 'totalCases':
         deaths_city_pnt.plot(ax=ax,
                              color='black',
@@ -501,13 +503,13 @@ def plt_Brasil_cv_metrics(cv_city_pnt,
     file_today = '../images/!cv19_BR_CV_' + metrics + '_last_updated.png'
     file = '../images/cv19_Brazil_CV_' + metrics + '_' + str(
         date.month) + '-' + str(date.day) + '-' + str(date.year) + '.png'
-    plt.savefig(file, dpi=300)
+    #plt.savefig(file, dpi=300)
     plt.savefig(file_today, dpi=300)
-    
+
 
 def get_state_info(cv_city, dt_state, br_shp, br_cities, state):
     date = datetime.datetime.today()
-    
+
     cv_state = cv_city.loc[cv_city['UF'] == state].copy()
     deaths_state = cv_state.loc[cv_state['deaths'] != 0].copy()
     state_total_cases = dt_state[dt_state.state == state].totalCases.sum()
@@ -530,7 +532,7 @@ def plot_state_cases(state, cv_state, deaths_state, state_total_cases,
                      state_deaths, date, br_shp, br_cities):
     sp_motorway, sp_primary, rj_motorway, rj_primary, mg_motorway, mg_primary, ce_motorway, ce_primary = load_roads(
 )
-    
+
     if state == 'SP':
         sp_shp = br_shp.loc[br_shp['UF'] == state].copy()
         ax = sp_shp.plot(figsize=(18, 16),
@@ -620,37 +622,39 @@ def plot_state_cases(state, cv_state, deaths_state, state_total_cases,
     plt.savefig(file_today, dpi=300)
     file = '../images/cv19_' + state + '_' + str(date.month) + '-' + str(
         date.day) + '-' + str(date.year) + '.png'
-    plt.savefig(file, dpi=300)
+    #plt.savefig(file, dpi=300)
 
     #file_gif = '../'+state.lower()+'_images_gif/today_cv19_' + state.lower() + '.png'
     #plt.savefig(file_gif, dpi=200)
-    
+
 
 '''
 Functions for creating Movie
 '''
 
 def conv_gif_to_mp4(state, fps=5, colour=True):
-    gif_in = '../gifs/gifs/'+state+'_Covid-19_Timeline.gif'
+    path = '/Users/mjrovai/Dropbox/2020/10_Data_Science/10_Corona_Virus_Analysis/10_CV-19_Brazil_Evolution'
+    gif_in = path +'/gifs/gifs/'+state+'_Covid-19_Timeline.gif'
     vid_out = '../videos/'+state+'_Covid-19_Timeline'
     reader = imageio.get_reader(gif_in)
     writer = imageio.get_writer(vid_out+'.mp4', fps=fps)
     for im in reader:
         if colour == True:
             writer.append_data(im)
-        else:    
+        else:
             writer.append_data(im[:, :, 1])
     writer.close()
 
 def save_gifs (state):
+    path = '/Users/mjrovai/Dropbox/2020/10_Data_Science/10_Corona_Virus_Analysis/10_CV-19_Brazil_Evolution'
     frames = []
-    imgs = sorted(glob.glob('../gifs/'+state.lower()+'_images_gif/*.png'))
+    imgs = sorted(glob.glob(path + '/gifs/'+state.lower()+'_images_gif/*.png'))
     for i in imgs:
         frames.append(imageio.imread(i))
-    imageio.mimsave('../gifs/gifs/'+state+'_Covid-19_Timeline.gif', frames)
+    imageio.mimsave(path + '/gifs/gifs/'+state+'_Covid-19_Timeline.gif', frames)
 
 def create_state_gif(dates, cv_city_t, deaths_city_t, br_shp, state):
-    
+    path = '/Users/mjrovai/Dropbox/2020/10_Data_Science/10_Corona_Virus_Analysis/10_CV-19_Brazil_Evolution'
     sp_motorway, sp_primary, rj_motorway, rj_primary, mg_motorway, mg_primary, ce_motorway, ce_primary = load_roads()
 
     for date in dates:
@@ -661,7 +665,7 @@ def create_state_gif(dates, cv_city_t, deaths_city_t, br_shp, state):
                                edgecolor='#444444')
             fdtt = cv_city_t.loc[cv_city_t['date'] == date].copy()
             fdtt_deaths = deaths_city_t.loc[deaths_city_t['date'] == date].copy()
-            fdtt.plot(ax=ax, color="orange", markersize=5, label='City')              
+            fdtt.plot(ax=ax, color="orange", markersize=5, label='City')
             fdtt_deaths.plot(ax=ax, color="red", markersize=5, label='death')
             plt.title('Brazilian cities reported with Covid19 cases (orange) and deaths (red))', fontsize=30)
             for idx, row in br_shp.iterrows():
@@ -723,7 +727,7 @@ def create_state_gif(dates, cv_city_t, deaths_city_t, br_shp, state):
             xy_1 = (-42.3, -23.1)
             xy_2 = (-42.3, -23.15)
             xy_3 = (-42.3, -23.2)
-            
+
         if state == 'MG':
             mg_shp = br_shp.loc[br_shp['UF'] == state].copy()
             ax = mg_shp.plot(figsize=(18, 16),
@@ -820,7 +824,7 @@ def create_state_gif(dates, cv_city_t, deaths_city_t, br_shp, state):
             color='blue')
 
         plt.axis('off')
-        file = '../gifs/' + state.lower() + '_images_gif/cv19_' + state + '_' + str(
+        file = path + '/gifs/' + state.lower() + '_images_gif/cv19_' + state + '_' + str(
             date) + '.png'
         plt.savefig(file, dpi=200)
 
