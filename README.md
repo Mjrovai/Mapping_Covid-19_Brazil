@@ -12,37 +12,32 @@
 
 <h3>Content of subfolders:</h3>
 
-- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/videos"> /videos </a> Short videos showing the development of Covid-19 in Brazil and main States.
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/videos"> /videos </a>  - Short videos showing the development of Covid-19 in Brazil and main States.
 
-- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/graphs"> /graphs </a> Timeline graphs of main brazilian cities
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/graphs"> /graphs </a>  - Timeline graphs of main brazilian cities
 
-- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/images"> /images </a> Most updated maps 
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/images"> /images </a>  - Most updated maps 
 
-- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/notebooks"> /notebooks </a> Code used to get Graphs, Maps, Gifs, and videos</h3>
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/notebooks"> /notebooks </a>  - Code used to get Graphs, Maps, Gifs, and videos</h3>
 
 <h3>Datasets:</h3>
 
-- Worldometers Daily Data: https://www.worldometers.info/coronavirus/
+- <a href="https://www.worldometers.info/coronavirus/"> Worldometers Daily Data </a> 
 
-- Confirmed cases by day, using information from the news. Covid19br dataset is available at GitHub: https://github.com/wcota/covid19br
+- <a href="https://github.com/wcota/covid19br> Confirmed cases by day, using information from the news </a> 
 
-- Raw data by city compiled from original dataset provided by Brasil.IO: https://brasil.io/dataset/covid19/caso/
+- <a href="https://brasil.io/dataset/covid19/caso/> Raw data by city compiled from original dataset provided by Brasil.IO </a>
 
 <h3>Thanks to: </h3>
 
-- Wesley Cota (https://wesleycota.com), Universidade Federal de Viçosa, Brazil and Universidad de Zaragoza, Spain 
+- <a href="https://wesleycota.com> Wesley Cota </a> Universidade Federal de Viçosa, Brazil and Universidad de Zaragoza, Spain 
 
-- Alvaro Justen: https://blog.brasil.io/author/alvaro-justen.html, Brasil.IO
+- <a href="https://blog.brasil.io/author/alvaro-justen.html> Alvaro Justen </a> Brasil.IO
 
 <h3>License: </h3> 
-- CC BY-SA 4.0: Creative Commons Attribution-ShareAlike 4.0 International: https://creativecommons.org/licenses/by-sa/4.0/
-
-
-
-
+- <a href="https://creativecommons.org/licenses/by-sa/4.0/> CC BY-SA 4.0</a> Creative Commons Attribution-ShareAlike 4.0 International
 
 <h3>General Situation in Brazil:</h3> 
-
 <img src="graphs/cv19_TOTAL_linear_CV_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_TOTAL_log_CV_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_TOTAL_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
