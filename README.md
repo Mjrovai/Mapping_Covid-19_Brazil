@@ -40,15 +40,15 @@ NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were gener
 
 <h3>More information: </h3>
 
-- https://wcota.me/covid19br
+- <a href="https://wcota.me/covid19br">https://wcota.me/covid19br</a>
 
-- https://brasil.io/covid19/
+- <a href="https://brasil.io/covid19/">https://brasil.io/covid19/</a>
 
 <h3>Content of subfolders:</h3>
 
-- <a href="/videos"> /videos </a> have short videos showing the development of Covid-19 in Brazil and main states.
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/videos"> /videos </a> have short videos showing the development of Covid-19 in Brazil and main states.
 
-- <a href="/graphs"> /graphs </a> have all timeline graphs of main brazilian cities
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/graphs"> /graphs </a> have all timeline graphs of main brazilian cities
 
 - <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/images"> /images </a> have all below most updated mapsmaps 
 
