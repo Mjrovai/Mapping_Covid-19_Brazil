@@ -2,6 +2,15 @@
 <img src="images/Portada_1.png">
 <h3> Tracking the pandemic outbreak in Brazil</h3>
 <br>
+> The main purpose of this repository, is to help people to develop their own 
+> graphs, maps and videos using Python, GeoPandas and Plotly.
+> I will try to keep it updated in terms of Covid-19 Pandemic information in Brazil, 
+> but I strongly suggest you to vist below stes for more information. 
+<h3>More information: </h3>
+
+- <a href="https://wcota.me/covid19br">https://wcota.me/covid19br</a>
+
+- <a href="https://brasil.io/covid19/">https://brasil.io/covid19/</a>
 <h3>Ways to get Graphs, Maps, Gifs and videos using files availabe on /notebooks:</h3>
 
 1. At Terminal, having the file 'cv_util_func.py' (utility functions) at same directory, run script:
@@ -38,11 +47,7 @@ NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were gener
 <h3>License: </h3> 
 - CC BY-SA 4.0: Creative Commons Attribution-ShareAlike 4.0 International: https://creativecommons.org/licenses/by-sa/4.0/
 
-<h3>More information: </h3>
 
-- <a href="https://wcota.me/covid19br">https://wcota.me/covid19br</a>
-
-- <a href="https://brasil.io/covid19/">https://brasil.io/covid19/</a>
 
 <h3>Content of subfolders:</h3>
 
