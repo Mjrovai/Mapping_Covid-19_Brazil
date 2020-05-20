@@ -7,26 +7,18 @@
 >but I strongly suggest you visit the below sites for more info.
 <h3>More information: </h3>
 - <a href="https://wcota.me/covid19br">https://wcota.me/covid19br</a>
+
 - <a href="https://brasil.io/covid19/">https://brasil.io/covid19/</a>
 
-<h3>Ways to get Graphs, Maps, Gifs and videos using files availabe on /notebooks:</h3>
+<h3>Content of subfolders:</h3>
 
-1. At Terminal, having the file 'cv_util_func.py' (utility functions) at same directory, run script:
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/videos"> /videos </a> Short videos showing the development of Covid-19 in Brazil and main States.
 
-- $ python get_cv19_brazil.py
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/graphs"> /graphs </a> Timeline graphs of main brazilian cities
 
-2. Having the file 'cv_util_func.py' (utility functions) at same directory, run the notebook:
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/images"> /images </a> Most updated maps 
 
-- '10_Covid19_Brazil_Geo_Mapping_Analysis.ipynb'
-
-3. Run only the notebook (used during developement phase):
-
-- 30_Covid19_Brazil_Geo_Mapping_Analysis.ipynb
-
-<br>
-NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were generated using:
-
-- 20_Geo_Mapping_Brasil_Cities.ipynb
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/notebooks"> /notebooks </a> Code used to get Graphs, Maps, Gifs, and videos</h3>
 
 <h3>Datasets:</h3>
 
@@ -47,13 +39,7 @@ NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were gener
 
 
 
-<h3>Content of subfolders:</h3>
 
-- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/videos"> /videos </a> have short videos showing the development of Covid-19 in Brazil and main states.
-
-- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/graphs"> /graphs </a> have all timeline graphs of main brazilian cities
-
-- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/images"> /images </a> have all below most updated mapsmaps 
 
 <h3>General Situation in Brazil:</h3> 
 
