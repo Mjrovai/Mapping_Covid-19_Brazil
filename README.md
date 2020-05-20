@@ -50,7 +50,7 @@ NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were gener
 
 - <a href="/graphs"> /graphs </a> have all timeline graphs of main brazilian cities
 
-- <a href="/images"> /images </a> have all below most updated mapsmaps 
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/images"> /images </a> have all below most updated mapsmaps 
 
 <h3>General Situation in Brazil:</h3> 
 
