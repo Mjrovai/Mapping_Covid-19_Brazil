@@ -69,5 +69,3 @@ Specific situation in the Main States
 <img src="images/!cv19_MG_last_updated.png"/>
 <img src="images/!cv19_CE_last_updated.png"/>
 <br>
-# Mapping_Covid-19_Brazil
-# Mapping_Covid-19_Brazil
