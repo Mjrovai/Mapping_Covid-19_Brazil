@@ -46,11 +46,11 @@ NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were gener
 
 <h3>Content of subfolders:</h3>
 
-- /videos have short videos showing the development of Covid-19 in Brazil and main states. 
+- <a href="/videos"> /videos </a> have short videos showing the development of Covid-19 in Brazil and main states.
 
-- /graphs have all timeline graphs of main brazilian cities
+- <a href="/graphs"> /graphs </a> have all timeline graphs of main brazilian cities
 
-- /images have all below most updated mapsmaps 
+- <a href="/images"> /images </a> have all below most updated mapsmaps 
 
 <h3>General Situation in Brazil:</h3> 
 
@@ -63,7 +63,7 @@ NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were gener
 <img src="images/!cv19_BR_CV_TotalCases_per_1M_pop_last_updated.png"/>
 <img src="images/!cv19_BR_CV_Deaths_per_1M_pop_last_updated.png"/>
 <img src="images/!cv19_BR_last_updated.png"/>
-Specific situation in the Main States
+<h3>Specific situation in the Main States</H3>
 <img src="images/!cv19_SP_last_updated.png"/>
 <img src="images/!cv19_RJ_last_updated.png"/>
 <img src="images/!cv19_MG_last_updated.png"/>
