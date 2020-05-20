@@ -54,4 +54,3 @@
 <img src="images/!cv19_RJ_last_updated.png"/>
 <img src="images/!cv19_MG_last_updated.png"/>
 <img src="images/!cv19_CE_last_updated.png"/>
-<br>
