@@ -53,7 +53,11 @@ NOTE: Noteboks (10_... AND 30_...) and Python Script use geodata that were gener
 - <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/images"> /images </a> have all below most updated mapsmaps 
 
 <h3>General Situation in Brazil:</h3> 
-
+<video controls>
+  <source src="videos/BR_Covid-19_Timeline.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video>
 <img src="graphs/cv19_TOTAL_linear_CV_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_TOTAL_log_CV_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_TOTAL_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
