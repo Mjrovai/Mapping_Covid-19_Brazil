@@ -20,7 +20,7 @@
 
 - <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/images"> /images </a>  - Most updated maps 
 
-- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/notebooks"> /notebooks </a>  - Code used to get Graphs, Maps, Gifs, and videos</h3>
+- <a href="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/tree/master/notebooks"> /notebooks </a>  - Code used to get Graphs, Maps, Gifs, and Videos
 
 <h3>Datasets:</h3>
 
