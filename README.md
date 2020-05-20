@@ -6,9 +6,11 @@
 >to keep it updated in terms of Covid-19 Pandemic information in Brazil, 
 >but I strongly suggest you visit the below sites for more info.
 <h3>More information: </h3>
-- <a href="https://wcota.me/covid19br">https://wcota.me/covid19br</a>
 
-- <a href="https://brasil.io/covid19/">https://brasil.io/covid19/</a>
+- <a href="https://wcota.me/covid19br"> https://wcota.me/covid19br </a>
+
+- <a href="https://brasil.io/covid19/"> https://brasil.io/covid19/ </a>
+
 
 <h3>Content of subfolders:</h3>
 
@@ -24,18 +26,18 @@
 
 - <a href="https://www.worldometers.info/coronavirus/"> Worldometers Daily Data </a> 
 
-- <a href="https://github.com/wcota/covid19br> Confirmed cases by day, using information from the news </a> 
+- <a href="https://github.com/wcota/covid19br"> Confirmed cases by day, using information from the news </a> 
 
-- <a href="https://brasil.io/dataset/covid19/caso/> Raw data by city compiled from original dataset provided by Brasil.IO </a>
+- <a href="https://brasil.io/dataset/covid19/caso/"> Raw data by city compiled from original dataset provided by Brasil.IO </a>
 
 <h3>Thanks to: </h3>
 
-- <a href="https://wesleycota.com> Wesley Cota </a> Universidade Federal de Viçosa, Brazil and Universidad de Zaragoza, Spain 
+- <a href="https://wesleycota.com"> Wesley Cota </a> Universidade Federal de Viçosa, Brazil and Universidad de Zaragoza, Spain 
 
-- <a href="https://blog.brasil.io/author/alvaro-justen.html> Alvaro Justen </a> Brasil.IO
+- <a href="https://blog.brasil.io/author/alvaro-justen.html"> Alvaro Justen </a> Brasil.IO
 
 <h3>License: </h3> 
-- <a href="https://creativecommons.org/licenses/by-sa/4.0/> CC BY-SA 4.0</a> Creative Commons Attribution-ShareAlike 4.0 International
+- <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0</a> Creative Commons Attribution-ShareAlike 4.0 International
 
 <h3>General Situation in Brazil:</h3> 
 <img src="graphs/cv19_TOTAL_linear_CV_Evolution_Graph_updated.png"/>
