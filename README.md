@@ -1,5 +1,7 @@
 <h1>Mapping in the Time of Pandemic</h1>
-<img src="https://github.com/Mjrovai/Mapping_Covid-19_Brazil/blob/master/images/Portada_1.png">
+images/Portada_1.png
+
+<img src="images/Portada_1.png">
 <h3> Tracking the pandemic outbreak in Brazil</h3>
 <br>
 <h3>Ways to get Graphs, Maps, Gifs and videos using files availabe on /notebooks:</h3>
