@@ -111,13 +111,13 @@ print ('\n[INFO] Mapping Covid-19 Brazil cases - WAIT \n')
 date = datetime.datetime.today()
 cv_city, deaths_city, cv_city_pnt, deaths_city_pnt, total_cases, deaths, cfr = get_Brazil_data(dt, br_shp, br_cities)
 plt_Brasil_cities(cv_city, deaths_city, date, total_cases, deaths, cfr, br_shp, br_cities, deaths_only=False)
-plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities)
+plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, n=1)
 plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='deaths', n=4)
 
 # Other Pandemic metrics maps
-plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='TotalCases/1M pop', n=2 )
-plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='Deaths/1M pop', n=5 )
-plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='CFR[%]', n=5 )
+plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='TotalCases/1M pop', n=0.1 )
+plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='Deaths/1M pop', n=1 )
+plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='CFR[%]', n=5)
 
 
 # Selected State Analysis
