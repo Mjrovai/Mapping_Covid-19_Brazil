@@ -7,10 +7,13 @@
 >but I strongly suggest you visit the below sites for more info.
 <h3>More information: </h3>
 
+Brazil:
 - <a href="https://wcota.me/covid19br"> https://wcota.me/covid19br </a>
-
 - <a href="https://brasil.io/covid19/"> https://brasil.io/covid19/ </a>
 
+World:
+- <a href="https://www.worldometers.info/coronavirus/"> Worldometers Daily Data </a>
+- <a href="https://ig.ft.com/coronavirus-chart/?areas=bra&areas=usa&areas=rus&areas=mex&areas=gbr&areas=ita&areasRegional=usny&areasRegional=usnj&cumulative=0&logScale=1&perMillion=0&values=deaths">FT - Coronavirus tracked</a>
 
 <h3>Content of subfolders:</h3>
 
@@ -24,7 +27,7 @@
 
 <h3>Datasets:</h3>
 
-- <a href="https://www.worldometers.info/coronavirus/"> Worldometers Daily Data </a> 
+ 
 
 - <a href="https://github.com/wcota/covid19br"> Confirmed cases by day, using information from the news </a> 
 
