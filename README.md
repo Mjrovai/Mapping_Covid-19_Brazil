@@ -1,5 +1,5 @@
 <h1>Mapping in the Time of Pandemic</h1>
-<h3> Tracking the pandemic outbreak in Brazil</h3>
+<h3> Tracking the Covid-19 outbreak in Brazil</h3>
 <img src="images/Portada_1.png">
 >The primary purpose of this repository is to help people to develop their 
 >graphs, maps, and videos using Python, GeoPandas, and Plotly. I will try 
