@@ -1,5 +1,5 @@
 <h1>Mapping in the Time of Pandemic</h1>
-<h3> Tracking the pandemic outbreak in Brazil</h3>
+<h3> Tracking the Covid-19 outbreak in Brazil</h3>
 <img src="images/Portada_1.png">
 >The primary purpose of this repository is to help people to develop their 
 >graphs, maps, and videos using Python, GeoPandas, and Plotly. I will try 
@@ -7,10 +7,13 @@
 >but I strongly suggest you visit the below sites for more info.
 <h3>More information: </h3>
 
+Brazil:
 - <a href="https://wcota.me/covid19br"> https://wcota.me/covid19br </a>
-
 - <a href="https://brasil.io/covid19/"> https://brasil.io/covid19/ </a>
 
+World:
+- <a href="https://www.worldometers.info/coronavirus/"> Worldometers Daily Data </a>
+- <a href="https://ig.ft.com/coronavirus-chart/?areas=bra&areas=usa&areas=rus&areas=mex&areas=gbr&areas=ita&areasRegional=usny&areasRegional=usnj&cumulative=0&logScale=1&perMillion=0&values=deaths">FT - Coronavirus tracked</a>
 
 <h3>Content of subfolders:</h3>
 
@@ -24,7 +27,7 @@
 
 <h3>Datasets:</h3>
 
-- <a href="https://www.worldometers.info/coronavirus/"> Worldometers Daily Data </a> 
+ 
 
 - <a href="https://github.com/wcota/covid19br"> Confirmed cases by day, using information from the news </a> 
 
