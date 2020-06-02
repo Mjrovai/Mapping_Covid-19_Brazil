@@ -220,7 +220,7 @@ def get_wordometers_covid(country, worldmetersLink):
     return data, today
 
 
-def get_brazil_cv_data(date):
+def get_brazil_cv_data(date, save=True):
 
     url = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-cities.csv'
     url_tm = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-cities-time.csv'
@@ -230,7 +230,8 @@ def get_brazil_cv_data(date):
         date.year, date.month, date.day, dt.shape[0]))
 
     file = '../data/cases-brazil-cities-'+str(date.day)+'-'+str(date.month)+'-'+str(date.year)+'.csv'
-    dt.to_csv(file)
+    if save == True:
+        dt.to_csv(file)
 
     dt.rename(columns={'ibgeID':'COD. IBGE'}, inplace=True)
     total_cases = dt.totalCases.sum()
