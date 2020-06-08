@@ -75,6 +75,10 @@ date = today
 dt, dt_tm, dt_tm_city, dt_state, total_cases, deaths, cfr = get_brazil_cv_data(
     date)
 
+# Plot State Table
+
+dx = dt_state.sort_values('deaths', ascending=False)
+plot_table(dx, show=False, save=True)
 
 # Timeline of Brazil Total cases cases
 print ('\n[INFO] Plotting Covid-19 Brazil cases')
@@ -95,7 +99,52 @@ for city in top_cities:
 plot_mov_ave_deaths_last_week(dt_tm, 'TOTAL', y_scale='linear', n_0=100, mov=7, show=False, save=True)   
 
 for city in top_cities:
-    plot_mov_ave_deaths_last_week(dt_tm, city, y_scale='linear', n_0=1, mov=7, show=False, save=True)
+    tst = plot_mov_ave_deaths_last_week_2(dt_tm, city, y_scale='linear', n_0=1, mov=7, show=False, save=True)
+    
+# special graphics
+
+# Recife
+tst = plot_mov_ave_deaths_last_week_2(dt_tm,
+                                    'Recife/PE',
+                                    y_scale='linear',
+                                    n_0=3,
+                                    mov=7,
+                                    graph='line',
+                                    show=False,
+                                    save=True,
+                                    rect=True, 
+                                    x0='2020-05-16',
+                                    x1='2020-05-31',
+                                    text="Lock-Down")
+
+# Fortaleza
+tst = plot_mov_ave_deaths_last_week_2(dt_tm,
+                                    'Fortaleza/CE',
+                                    y_scale='linear',
+                                    n_0=3,
+                                    mov=7,
+                                    graph='line',
+                                    show=False,
+                                    save=True,
+                                    rect=True, 
+                                    x0='2020-05-07',
+                                    x1='2020-05-31',
+                                    text="Lock-Down")
+    
+
+# Sampa
+tst = plot_mov_ave_deaths_last_week_2(dt_tm,
+                                    'São Paulo/SP',
+                                    y_scale='linear',
+                                    n_0=3,
+                                    mov=7,
+                                    graph='line',
+                                    show=False,
+                                    save=True,
+                                    rect=True, 
+                                    x0='2020-05-20',
+                                    x1='2020-05-25',
+                                    text="Holidays")
     
       
 # GeoData (Brasil & Municipalities)
