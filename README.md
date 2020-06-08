@@ -60,7 +60,7 @@ World:
 <img src="images/!cv19_CE_last_updated.png"/>
 <h3>Specific situation in critical cities</H3>
 <img src="graphs/cv19_São Paulo-SP_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
-<img src="graphs/cv19_Manaus-AM_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_Rio de Janeiro-RJ_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
+<img src="graphs/cv19_Manaus-AM_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_Fortaleza-CE_line_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_Recife-PE_line_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
