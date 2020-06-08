@@ -178,6 +178,217 @@ def plot_mov_ave_deaths_last_week(data,
         fig.show()
 # -------------------------------------------------------------------------------------
 
+def plot_mov_ave_deaths_last_week_2(data,
+                                  city,
+                                  n_0=100,
+                                  y_scale='log',
+                                  mov=7,
+                                  graph='bar',
+                                  show=False,
+                                  save=True,
+                                  rect=False,
+                                  x0=None,
+                                  x1=None,
+                                  text=None):
+    date = datetime.datetime.today()
+    data = data[data.city == city]
+    tst = data[data.deaths >= n_0]
+    tst.reset_index(drop=True, inplace=True)
+
+    tst['new_deaths'] = tst['deaths'] - tst['deaths'].shift(1)
+    tst['new_deaths_Mov_Ave'] = tst.iloc[:, -1].rolling(window=mov).mean()
+    tst['mov_ave_new_deaths_last_week'] = tst['new_deaths_Mov_Ave'] - tst[
+        'new_deaths_Mov_Ave'].shift(7)
+    fig = go.Figure()
+    if graph == 'bar':
+        fig.add_trace(
+            go.Bar(x=tst.date,
+                   y=round(tst.new_deaths_Mov_Ave),
+                   name='New daily deaths'))
+        fig.add_trace(
+            go.Bar(x=tst.date,
+                   y=round(tst.mov_ave_new_deaths_last_week),
+                   name='New daily deaths vs last week'))
+    else:
+        fig.add_trace(
+            go.Scatter(x=tst.date,
+                       y=round(tst.new_deaths_Mov_Ave),
+                       name='New daily Deaths',
+                       line=dict(color='royalblue', width=2)))
+        fig.add_trace(
+            go.Scatter(x=tst.date,
+                       y=round(tst.mov_ave_new_deaths_last_week),
+                       name='New daily deaths vs last week',
+                       line=dict(color='firebrick', width=2)))
+    if rect == True:
+        fig.update_layout(
+            shapes=[
+                # 1st highlight during Feb 4 - Feb 6
+                dict(
+                    type="rect",
+                    # x-reference is assigned to the x-values
+                    xref="x",
+                    # y-reference is assigned to the plot paper [0,1]
+                    yref="paper",
+                    x0=x0,
+                    y0=0,
+                    x1=x1,
+                    y1=1,
+                    fillcolor="LightSalmon",
+                    opacity=0.3,
+                    layer="below",
+                    line_width=0,
+                )
+            ],
+            annotations=[
+                dict(x=x0,
+                     y=0.8,
+                     xref="x",
+                     yref='paper',
+                     text=text,
+                     showarrow=True,
+                     font=dict(family="Courier New, monospace",
+                               size=16,
+                               color="#ffffff"),
+                     align="center",
+                     arrowhead=2,
+                     arrowsize=1,
+                     arrowwidth=2,
+                     arrowcolor="#636363",
+                     ax=20,
+                     ay=-30,
+                     bordercolor="#c7c7c7",
+                     borderwidth=2,
+                     borderpad=4,
+                     bgcolor="#ff7f0e",
+                     opacity=0.5)
+            ])
+
+    fig.update_layout(
+        title='Brazil ({}) - New Daily Deaths by Covid-19 versus same day previous week'.
+        format(city),
+        xaxis_title="Day",
+        yaxis_title="Number of Deaths",
+        yaxis_type=y_scale,
+        font=dict(size=10, color="#7f7f7f"),
+        legend=dict(x=0,
+                    y=1.0,
+                    bgcolor='rgba(255, 255, 255, 0)',
+                    bordercolor='rgba(255, 255, 255, 0)'),
+        annotations=[
+            dict(
+                x=0,
+                y=1.05,
+                text='Deaths over {:,} - Y-scale: {} ({}-day rolling average) - {}/{}/{}'
+                .format(n_0, y_scale, mov, date.year, date.month, date.day),
+                showarrow=False,
+                xref='paper',
+                yref='paper',
+                xanchor='left',
+                yanchor='auto',
+                xshift=0,
+                yshift=0,
+                font=dict(size=10, color="#7f7f7f")),
+            dict(
+                x=0,
+                y=1.05,
+                text='Deaths over {:,} - Y-scale: {} ({}-day rolling average) - {}/{}/{}'
+                .format(n_0, y_scale, mov, date.year, date.month, date.day),
+                showarrow=False,
+                xref='paper',
+                yref='paper',
+                xanchor='left',
+                yanchor='auto',
+                xshift=0,
+                yshift=0,
+                font=dict(size=10, color="#7f7f7f")),
+            dict(x=1,
+                 y=-0.10,
+                 text="Source: Brasil.io - https://brasil.io/dataset/covid19/caso/",
+                 showarrow=False,
+                 xref='paper',
+                 yref='paper',
+                 xanchor='right',
+                 yanchor='auto',
+                 xshift=0,
+                 yshift=0,
+                 font=dict(size=8, color='royalblue')),
+            dict(x=1,
+                 y=-0.14,
+                 text="Created by Marcelo Rovai - https://MJRoBot.org",
+                 showarrow=False,
+                 xref='paper',
+                 yref='paper',
+                 xanchor='right',
+                 yanchor='auto',
+                 xshift=0,
+                 yshift=0,
+                 font=dict(size=8, color='royalblue'))
+        ])
+
+    if save == True:
+        city = city.replace('/', '-')
+        fig.write_image(
+            '../graphs/cv19_' + city + '_' + graph +'_' + y_scale +
+            '_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png')
+    if show == True:
+        fig.show()
+
+    return tst
+
+# -------------------------------------------------------------------------------------
+
+def plot_table(dx, show=False, save=True):
+    date = datetime.datetime.today()
+    total_cases = dx.totalCases.sum()
+    total_deaths = dx.deaths.sum()
+
+    fig = go.Figure(data=[
+        go.Table(header=dict(values=list(dx.columns),
+                             fill_color='#D6D6D6',
+                             align=['center', 'center'],
+                             font=dict(color='green', size=16)),
+                 cells=dict(
+                     values=[dx.state, dx.deaths, dx.totalCases, dx['CFR[%]']],
+                     fill_color="#E5ECF6",
+                     align=['center', 'center'],
+                     font=dict(color='firebrick', size=15),
+                     height=30))
+    ])
+    fig.update_layout(
+        title='Brazil Data by States - {}/{}/{}'.format(
+            date.year,
+            date.month,
+            date.day,
+        ),
+        font=dict(size=16, color="#7f7f7f"),
+        margin=dict(l=20, r=20, t=50, b=20),
+        autosize=False,
+        width=600,
+        height=1000,
+        annotations=[
+            dict(x=0,
+                 y=0.05,
+                 text='    Brazil Total      Deaths: {:,}       Cases: {:,}'.
+                 format(total_deaths, total_cases),
+                 showarrow=False,
+                 xref='paper',
+                 yref='paper',
+                 xanchor='left',
+                 yanchor='auto',
+                 xshift=0,
+                 yshift=0,
+                 font=dict(size=16, color="#7f7f7f"))
+        ])
+
+    if save == True:
+        fig.write_image('../graphs/state_table.png')
+    if show == True:
+        fig.show()
+
+# -------------------------------------------------------------------------------------
+
+
 def data_cleanup(array):
     L = []
     for i in array:
