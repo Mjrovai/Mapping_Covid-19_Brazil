@@ -43,6 +43,7 @@ World:
 - <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0</a> Creative Commons Attribution-ShareAlike 4.0 International
 
 <h3>General Situation in Brazil:</h3> 
+<img src="graphs/state_table.png"/>
 <img src="graphs/cv19_TOTAL_linear_CV_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_TOTAL_log_CV_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_TOTAL_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
@@ -57,3 +58,9 @@ World:
 <img src="images/!cv19_RJ_last_updated.png"/>
 <img src="images/!cv19_MG_last_updated.png"/>
 <img src="images/!cv19_CE_last_updated.png"/>
+<h3>Specific situation in critical cities</H3>
+<img src="graphs/cv19_São Paulo-SP_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
+<img src="graphs/cv19_Manaus-AM_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
+<img src="graphs/cv19_Rio de Janeiro-RJ_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
+<img src="graphs/cv19_Fortaleza-CE_line_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
+<img src="graphs/cv19_Recife-PE_line_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
