@@ -58,6 +58,13 @@ World:
 <img src="images/!cv19_MG_last_updated.png"/>
 <img src="images/!cv19_CE_last_updated.png"/>
 <h3>Specific situation in critical cities</H3>
+
+<video width="400" controls>
+  <source src="videos/top_cities_deaths_100K.mp4" type="video/mp4">
+  <source src="top_cities_deaths_100K.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
+
 <img src="graphs/cv19_São Paulo-SP_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_Rio de Janeiro-RJ_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_Manaus-AM_bar_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
