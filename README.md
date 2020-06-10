@@ -43,6 +43,12 @@ World:
 
 <h3>General Situation in Brazil:</h3> 
 <img src="graphs/state_table.png"/>
+<p>Brazil Capital Cities - COVID-19 - Deaths per 100K inhabitants</p>
+<video width="600" controls>
+  <source src="videos/capital_cities_deaths_100K.mp4" type="video/mp4">
+  <source src="top_cities_deaths_100K.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
 <img src="graphs/cv19_TOTAL_linear_CV_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_TOTAL_log_CV_Evolution_Graph_updated.png"/>
 <img src="graphs/cv19_TOTAL_linear_CV_Mov_ave_deaths_last_week_Evolution_Graph_updated.png"/>
