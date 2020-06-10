@@ -40,6 +40,7 @@ from shapely.geometry import Point, Polygon
 from unicodedata import normalize
 from PIL import Image
 import imageio
+import bar_chart_race as bcr
 
 # Functions used on Brazil Covid-19 Geo Mepping Analysis
 from cv_util_func import *
@@ -52,6 +53,34 @@ pd.options.display.float_format = '{:,}'.format
 mpl.rcParams['figure.dpi']= 150
 plt.style.use('seaborn-paper')
 
+## definitions
+capital_cities = ['Belém/PA', 
+'Fortaleza/CE',
+'Recife/PE',
+'Manaus/AM',
+'Rio de Janeiro/RJ',
+'São Luís/MA',
+'São Paulo/SP',
+'Maceió/AL',
+'Rio Branco/AC',
+'Vitória/ES',
+'Macapá/AP',
+'Boa Vista/RR',
+'Porto Velho/RO',
+'João Pessoa/PB',
+'Salvador/BA',
+'Natal/RN',
+'Teresina/PI',
+'Aracaju/SE',
+'Brasília/DF',
+'Goiânia/GO',
+'Porto Alegre/RS',
+'Cuiabá/MT',
+'Curitiba/PR',
+'Palmas/TO',
+'Belo Horizonte/MG',
+'Florianópolis/SC',
+'Campo Grande/MS']
 
 ## Datasets
 print ('\n[INFO] Retriving Covid-19 Brazil Info - WAIT')
@@ -202,6 +231,31 @@ conv_gif_to_mp4('SP', fps=5); print ('.', end =" ")
 conv_gif_to_mp4('RJ', fps=5); print ('.', end =" ") 
 conv_gif_to_mp4('MG', fps=5); print ('.', end =" ") 
 conv_gif_to_mp4('CE', fps=5); print ('.') 
+
+
+dead_city = get_dataframe(df=dt_tm,
+                          cities=top_cities,
+                          feature='deaths_per_100k_inhabitants',
+                          rnd=0,
+                          in_data='2020-03-20')
+
+bcr.bar_chart_race(dead_city, 
+                   title='Brazil Top Cities with COVID-19 cases - Deaths per 100K inhabitants',
+                  filename='../videos/top_cities_deaths_100K.mp4')
+
+
+
+dead_capital = get_dataframe(df=dt_tm,
+                          cities=capital_cities,
+                          feature='deaths_per_100k_inhabitants',
+                          rnd=0,
+                          in_data='2020-03-20')
+
+bcr.bar_chart_race(dead_capital, 
+                   title='Brazil Capital Cities - COVID-19 - Deaths per 100K inhabitants',
+                  filename='../videos/capital_cities_deaths_100K.mp4')
+
+
 
 print ('\n[INFO] End script MJRoBot.org @ {}\n'.format(today)) 
 

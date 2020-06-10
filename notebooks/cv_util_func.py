@@ -23,6 +23,7 @@ import plotly.graph_objs as go
 import geopandas as gpd
 from shapely.geometry import Point, Polygon
 from unicodedata import normalize
+import bar_chart_race as bcr
 
 '''
 Functions for getting, show and plotting CV-19 dataset
@@ -460,6 +461,21 @@ def get_brazil_cv_data(date, save=True):
     dt_tm_city.rename(columns={'ibgeID':'COD. IBGE'}, inplace=True)
 
     return dt, dt_tm, dt_tm_city, dt_state, total_cases, deaths, cfr
+
+
+
+def get_dataframe(df, cities, feature, rnd=0, in_data='2020-03-20'):
+    '''
+    Function to create specific [feature] timeseries on a list of [cities]
+    '''
+    data_city = pd.DataFrame(df.date)
+    for city in cities:
+        df_city = round(df[df.city == city][feature], rnd)
+        data_city[city] = df_city
+    data_city = data_city.fillna(0)
+    data_city = data_city[data_city.date > in_data]
+    data_city = data_city.groupby('date').agg(np.sum)
+    return data_city
 
 '''
 Functions for getting Brazil Geodata
