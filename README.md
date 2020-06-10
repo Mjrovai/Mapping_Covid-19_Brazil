@@ -52,14 +52,39 @@ World:
 <img src="images/!cv19_BR_CV_TotalCases_per_1M_pop_last_updated.png"/>
 <img src="images/!cv19_BR_CV_Deaths_per_1M_pop_last_updated.png"/>
 <img src="images/!cv19_BR_last_updated.png"/>
+<video width="600" controls>
+  <source src="videos/BR_Covid-19_Timeline.mp4" type="video/mp4">
+  <source src="top_cities_deaths_100K.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
 <h3>Specific situation in the Main States</H3>
 <img src="images/!cv19_SP_last_updated.png"/>
+<video width="600" controls>
+  <source src="videos/SP_Covid-19_Timeline.mp4" type="video/mp4">
+  <source src="top_cities_deaths_100K.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
 <img src="images/!cv19_RJ_last_updated.png"/>
+<video width="600" controls>
+  <source src="videos/RJ_Covid-19_Timeline.mp4" type="video/mp4">
+  <source src="top_cities_deaths_100K.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
 <img src="images/!cv19_MG_last_updated.png"/>
+<video width="600" controls>
+  <source src="videos/MG_Covid-19_Timeline.mp4" type="video/mp4">
+  <source src="top_cities_deaths_100K.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
 <img src="images/!cv19_CE_last_updated.png"/>
+<video width="600" controls>
+  <source src="videos/CE_Covid-19_Timeline.mp4" type="video/mp4">
+  <source src="top_cities_deaths_100K.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
 <h3>Specific situation in critical cities</H3>
-
-<video width="400" controls>
+<p>Brazil Top Cities with COVID-19 cases - Deaths per 100K inhabitants</p>
+<video width="600" controls>
   <source src="videos/top_cities_deaths_100K.mp4" type="video/mp4">
   <source src="top_cities_deaths_100K.ogg" type="video/ogg">
   Your browser does not support HTML video.
