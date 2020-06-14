@@ -42,6 +42,7 @@ World:
 - <a href="https://creativecommons.org/licenses/by-sa/4.0/"> CC BY-SA 4.0</a> Creative Commons Attribution-ShareAlike 4.0 International
 
 <h3>General Situation in Brazil:</h3> 
+<img src="graphs/wm_table.png"/>
 <img src="graphs/state_table.png"/>
 <p>Brazil Capital Cities - COVID-19 - Deaths per 100K inhabitants</p>
 <video width="600" controls>
