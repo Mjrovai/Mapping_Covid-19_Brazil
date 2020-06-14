@@ -86,18 +86,7 @@ capital_cities = ['Belém/PA',
 print ('\n[INFO] Retriving Covid-19 Brazil Info - WAIT')
 
 worldmetersLink = "https://www.worldometers.info/coronavirus/"
-data_wd_covid_br, today = get_wordometers_covid('Brazil', worldmetersLink)
-
-# Saving Brazil info
-Total_infected = data_wd_covid_br[0]
-New_Cases = data_wd_covid_br[1]
-Total_Deaths = data_wd_covid_br[2]
-New_Deaths = data_wd_covid_br[3] 
-Recovred = data_wd_covid_br[4] 
-Active_Case = data_wd_covid_br[5] 
-Serious_Critical = data_wd_covid_br[6]
-date = today
-
+plot_wm_table('Brazil', worldmetersLink, show=False, save=True)
 
 # Covid19 - Number of total cases by city & State
 

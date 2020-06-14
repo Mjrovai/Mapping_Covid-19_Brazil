@@ -389,7 +389,39 @@ def plot_table(dx, show=False, save=True):
 
 # -------------------------------------------------------------------------------------
 
+def plot_wm_table(country, worldmetersLink, show=False, save=True):
+    data_wm, today = get_wordometers_covid(country, worldmetersLink)
+    wm_date = str(today.year)+'/'+ str(today.month) +'/'+ str(today.day) +' - '+str(today.hour)+'h'
+    wm = ['Total_infected', 'New_Cases', 'Total_Deaths', 'New_Deaths', 'Recovered', 'Active_Case' , 'Serious_Critical']
 
+    fig = go.Figure(data=[
+        go.Table(header=dict(values=['Wordometers', 'Brazil Data'],
+                             fill_color='#D6D6D6',
+                             align=['center', 'center'],
+                             font=dict(color='green', size=16)),
+                 cells=dict(
+                     values=[wm, data_wm],
+                     fill_color="#E5ECF6",
+                     align=['center', 'center'],
+                     font=dict(color='firebrick', size=15),
+                     height=30))
+    ])
+    fig.update_layout(
+        title='{} Wordometer Data - {}'.format(country, wm_date),
+        font=dict(size=16, color="#7f7f7f"),
+        margin=dict(l=20, r=20, t=50, b=20),
+        autosize=False,
+        width=550,
+        height=350,
+        )
+
+    if save == True:
+        fig.write_image('../graphs/wm_table.png')
+    if show == True:
+        fig.show()
+
+# -------------------------------------------------------------------------------------
+        
 def data_cleanup(array):
     L = []
     for i in array:
