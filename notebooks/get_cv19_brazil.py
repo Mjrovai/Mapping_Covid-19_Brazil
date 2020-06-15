@@ -84,6 +84,7 @@ capital_cities = ['Belém/PA',
 
 ## Datasets
 print ('\n[INFO] Retriving Covid-19 Brazil Info - WAIT')
+today = datetime.datetime.today()
 
 worldmetersLink = "https://www.worldometers.info/coronavirus/"
 plot_wm_table('Brazil', worldmetersLink, show=False, save=True)
@@ -91,7 +92,7 @@ plot_wm_table('Brazil', worldmetersLink, show=False, save=True)
 # Covid19 - Number of total cases by city & State
 
 dt, dt_tm, dt_tm_city, dt_state, total_cases, deaths, cfr = get_brazil_cv_data(
-    date)
+    today)
 
 # Plot State Table
 

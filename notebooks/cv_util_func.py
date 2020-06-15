@@ -592,9 +592,11 @@ def get_Brazil_data(dt, br_shp, br_cities):
     cv_city_pnt = cv_city.copy()
     cv_city_pnt['geometry'] = cv_city_pnt['geometry'].representative_point()
     deaths_city_pnt = cv_city_pnt[cv_city_pnt.deaths != 0]
+    
+    number_cities_deaths = len(cv_city.index)
     print(
         'Brazil: Total number of Covid19 cases at {}/{}: {:,} ({:,} fatal) in {:,} cities with a CFR of {}%'
-        .format(date.month, date.day, total_cases, deaths, len(cv_city.index),
+        .format(date.month, date.day, total_cases, deaths, number_cities_deaths,
                 cfr))
 
     dt_city = cv_city_pnt.sort_values('totalCases', ascending=False).copy()
@@ -607,7 +609,7 @@ def get_Brazil_data(dt, br_shp, br_cities):
         date.month) + '-' + str(date.day) + '-' + str(date.year) + '.xlsx'
     dt_city.to_excel(file)
 
-    return cv_city, deaths_city, cv_city_pnt, deaths_city_pnt, total_cases, deaths, cfr
+    return cv_city, deaths_city, cv_city_pnt, deaths_city_pnt, total_cases, deaths, cfr, number_cities_deaths
 
 def plt_Brasil_cities(cv_city,
                       deaths_city,
