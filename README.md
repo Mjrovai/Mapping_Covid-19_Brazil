@@ -43,6 +43,7 @@ World:
 
 <h3>General Situation in Brazil:</h3> 
 <img src="graphs/wm_table.png"/>
+<img src="graphs/geo_table.png"/>
 <img src="graphs/state_table.png"/>
 <p>Brazil Capital Cities - COVID-19 - Deaths per 100K inhabitants</p>
 <video width="600" controls>
