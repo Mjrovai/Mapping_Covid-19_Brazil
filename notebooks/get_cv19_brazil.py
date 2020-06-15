@@ -86,6 +86,7 @@ capital_cities = ['Belém/PA',
 print ('\n[INFO] Retriving Covid-19 Brazil Info - WAIT')
 today = datetime.datetime.today()
 
+# Plot WM Table
 worldmetersLink = "https://www.worldometers.info/coronavirus/"
 plot_wm_table('Brazil', worldmetersLink, show=False, save=True)
 
@@ -171,13 +172,30 @@ print ('\n[INFO] Getting Brazilian Geodata\n')
 
 br_shp, br_cities = load_geodata()
 
-
 # Maping CoronaVirus data
 print ('\n[INFO] Mapping Covid-19 Brazil cases - WAIT \n')
 
 # Nationwide Analysis
 date = datetime.datetime.today()
-cv_city, deaths_city, cv_city_pnt, deaths_city_pnt, total_cases, deaths, cfr = get_Brazil_data(dt, br_shp, br_cities)
+cv_city, deaths_city, cv_city_pnt, deaths_city_pnt, total_cases, deaths, cfr, number_cities_cases, number_cities_deaths = get_Brazil_data(dt, br_shp, br_cities)
+
+perc_cases = round((number_cities_cases/5570)*100, 0)
+perc_deaths = round((number_cities_deaths/5570)*100, 0)
+
+geo = [
+    'Total number of Cases', 'Total number of Deaths', 'CFR [%]',
+    'Total number of Brazil cities', 'Number of Identified cities with cases',
+    'Brazilian cities with cases [%]',
+    'Number of Identified cities with deaths',
+    'Brazilian cities with deaths [%]'
+]
+data_geo = [
+    total_cases, deaths, cfr, 5570, number_cities_cases, perc_cases,
+    number_cities_deaths, perc_deaths
+]
+
+plot_geo_table(today, geo, data_geo, show=False, save=True)
+
 plt_Brasil_cities(cv_city, deaths_city, date, total_cases, deaths, cfr, br_shp, br_cities, deaths_only=False)
 plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, n=1)
 plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='deaths', n=4)

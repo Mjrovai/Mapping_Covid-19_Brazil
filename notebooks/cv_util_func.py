@@ -421,6 +421,40 @@ def plot_wm_table(country, worldmetersLink, show=False, save=True):
         fig.show()
 
 # -------------------------------------------------------------------------------------
+
+def plot_geo_table(today, geo, data_geo, show=False, save=True):
+    
+    
+    geo_date = str(today.year)+'/'+ str(today.month) +'/'+ str(today.day) +' - '+str(today.hour)+'h'
+    wm = ['Total_infected', 'New_Cases', 'Total_Deaths', 'New_Deaths', 'Recovered', 'Active_Case' , 'Serious_Critical']
+
+    fig = go.Figure(data=[
+        go.Table(header=dict(values=['Geo Summary', 'Brazil Data'],
+                             fill_color='#D6D6D6',
+                             align=['center', 'center'],
+                             font=dict(color='green', size=16)),
+                 cells=dict(
+                     values=[geo, data_geo],
+                     fill_color="#E5ECF6",
+                     align=['right', 'center'],
+                     font=dict(color='firebrick', size=15),
+                     height=30))
+    ])
+    fig.update_layout(
+        title='Brazil Geo Data summary - {}'.format(geo_date),
+        font=dict(size=16, color="#7f7f7f"),
+        margin=dict(l=20, r=20, t=50, b=20),
+        autosize=False,
+        width=700,
+        height=350,
+        )
+
+    if save == True:
+        fig.write_image('../graphs/geo_table.png')
+    if show == True:
+        fig.show()
+        
+# -------------------------------------------------------------------------------------
         
 def data_cleanup(array):
     L = []
@@ -433,7 +467,7 @@ def data_cleanup(array):
         L.append(i.strip())
     return L
 
-
+# -------------------------------------------------------------------------------------
 
 def get_wordometers_covid(country, worldmetersLink):
     today = datetime.datetime.today()
@@ -593,10 +627,11 @@ def get_Brazil_data(dt, br_shp, br_cities):
     cv_city_pnt['geometry'] = cv_city_pnt['geometry'].representative_point()
     deaths_city_pnt = cv_city_pnt[cv_city_pnt.deaths != 0]
     
-    number_cities_deaths = len(cv_city.index)
+    number_cities_cases = len(cv_city.index)
+    number_cities_deaths = len(deaths_city.index)
     print(
         'Brazil: Total number of Covid19 cases at {}/{}: {:,} ({:,} fatal) in {:,} cities with a CFR of {}%'
-        .format(date.month, date.day, total_cases, deaths, number_cities_deaths,
+        .format(date.month, date.day, total_cases, deaths, number_cities_cases,
                 cfr))
 
     dt_city = cv_city_pnt.sort_values('totalCases', ascending=False).copy()
@@ -609,7 +644,9 @@ def get_Brazil_data(dt, br_shp, br_cities):
         date.month) + '-' + str(date.day) + '-' + str(date.year) + '.xlsx'
     dt_city.to_excel(file)
 
-    return cv_city, deaths_city, cv_city_pnt, deaths_city_pnt, total_cases, deaths, cfr, number_cities_deaths
+    return cv_city, deaths_city, cv_city_pnt, deaths_city_pnt, total_cases, deaths, cfr, number_cities_cases, number_cities_deaths
+
+
 
 def plt_Brasil_cities(cv_city,
                       deaths_city,
