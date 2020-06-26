@@ -88,6 +88,8 @@ today = datetime.datetime.today()
 
 # Plot WM Table
 worldmetersLink = "https://www.worldometers.info/coronavirus/"
+plot_wm_table('World', worldmetersLink, show=False, save=True)
+plot_wm_table('South America', worldmetersLink, show=False, save=True)
 plot_wm_table('Brazil', worldmetersLink, show=False, save=True)
 
 # Covid19 - Number of total cases by city & State

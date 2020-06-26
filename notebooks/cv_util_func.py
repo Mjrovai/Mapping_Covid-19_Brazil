@@ -39,13 +39,16 @@ def plot_cases(data,
     date = datetime.datetime.today()
     data = data[data.city == city]
     tst = data[data.totalCases >= n_0]
-    tst['totalCases_Mov_Ave'] = tst.iloc[:, 8].rolling(window=mov).mean()
-    tst['newCases_Mov_Ave'] = tst.iloc[:, 7].rolling(window=mov).mean()
-    tst['deaths_Mov_Ave'] = tst.iloc[:, 6].rolling(window=mov).mean()
+    tst['totalCases_Mov_Ave'] = tst.iloc[:, 11].rolling(window=mov).mean()
+    tst['newCases_Mov_Ave'] = tst.iloc[:,10].rolling(window=mov).mean()
+    tst['deaths_Mov_Ave'] = tst.iloc[:, 9].rolling(window=mov).mean()
+    tst['newDeaths_Mov_Ave'] = tst.iloc[:, 8].rolling(window=mov).mean()
     fig = go.Figure()
     fig.add_trace(go.Scatter(x=tst.date, y=round(tst.totalCases_Mov_Ave), name='Total Cases', line=dict(color='royalblue', width=2)))
     fig.add_trace(go.Scatter(x=tst.date, y=round(tst.newCases_Mov_Ave), name='New Cases', line=dict(color='orange', width=2)))
     fig.add_trace(go.Scatter(x=tst.date, y=round(tst.deaths_Mov_Ave), name='Deaths', line=dict(color='firebrick', width=2)))
+    fig.add_trace(go.Scatter(x=tst.date, y=round(tst.newDeaths_Mov_Ave), name='New Deaths', line=dict(color='black', width=2)))
+    
     fig.update_layout(
         title='Covid-19 Brazil ({}) - {}/{}/{}'
         .format(city, date.year, date.month, date.day),
@@ -408,15 +411,15 @@ def plot_wm_table(country, worldmetersLink, show=False, save=True):
     ])
     fig.update_layout(
         title='{} Wordometer Data - {}'.format(country, wm_date),
-        font=dict(size=16, color="#7f7f7f"),
+        font=dict(size=14, color="#7f7f7f"),
         margin=dict(l=20, r=20, t=50, b=20),
         autosize=False,
-        width=550,
-        height=350,
+        width=600,
+        height=310,
         )
 
     if save == True:
-        fig.write_image('../graphs/wm_table.png')
+        fig.write_image('../graphs/wm_'+country+'_table.png')
     if show == True:
         fig.show()
 
