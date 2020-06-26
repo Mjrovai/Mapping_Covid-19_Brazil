@@ -398,7 +398,7 @@ def plot_wm_table(country, worldmetersLink, show=False, save=True):
     wm = ['Total_infected', 'New_Cases', 'Total_Deaths', 'New_Deaths', 'Recovered', 'Active_Case' , 'Serious_Critical']
 
     fig = go.Figure(data=[
-        go.Table(header=dict(values=['Wordometers', 'Brazil Data'],
+        go.Table(header=dict(values=['Wordometers', 'Data'],
                              fill_color='#D6D6D6',
                              align=['center', 'center'],
                              font=dict(color='green', size=16)),
