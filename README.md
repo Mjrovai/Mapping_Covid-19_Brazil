@@ -47,6 +47,8 @@ World:
 <img src="graphs/wm_Brazil_table.png"/>
 <img src="graphs/geo_table.png"/>
 <img src="graphs/state_table.png"/>
+<img src="images/!cv19_BR_states_deaths_per_100k_inhabitants.png"/>
+
 <p>Brazil Capital Cities - COVID-19 - Deaths per 100K inhabitants</p>
 <video width="600" controls>
   <source src="videos/capital_cities_deaths_100K.mp4" type="video/mp4">
