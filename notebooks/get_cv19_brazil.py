@@ -94,12 +94,20 @@ plot_wm_table('Brazil', worldmetersLink, show=False, save=True)
 
 # Covid19 - Number of total cases by city & State
 
-dt, dt_tm, dt_tm_city, dt_state, total_cases, deaths, cfr = get_brazil_cv_data(
+dt, dt_st, dt_tm, dt_tm_city, dt_state, total_cases, deaths, cfr = get_brazil_cv_data(
     today)
 
 # Plot State Table
 
-dx = dt_state.sort_values('deaths', ascending=False)
+dt_st = dt_st.fillna(0)
+dt_st['recovered'] = dt_st['recovered'].astype('int64')
+dt_st['suspects'] = dt_st['suspects'].astype('int64')
+dt_st['tests'] = dt_st['tests'].astype('int64')
+
+date_today = list(dt_st.date[-2:-1])[0]
+dt_st_today = dt_st[dt_st.date == date_today]
+
+dx = dt_st_today.sort_values('deaths', ascending=False)
 plot_table(dx, show=False, save=True)
 
 # Timeline of Brazil Total cases cases
