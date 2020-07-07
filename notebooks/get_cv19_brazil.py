@@ -293,3 +293,4 @@ bcr.bar_chart_race(dead_capital,
 print ('\n[INFO] End script MJRoBot.org @ {}\n'.format(today)) 
 
 
+'''
