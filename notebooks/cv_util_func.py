@@ -344,16 +344,17 @@ def plot_mov_ave_deaths_last_week_2(data,
 
 def plot_table(dx, show=False, save=True):
     date = datetime.datetime.today()
-    total_cases = dx.totalCases.sum()
-    total_deaths = dx.deaths.sum()
+    
+    data = [dx.state, dx.recovered, dx.deaths, dx.totalCases, dx.suspects, dx.tests]
+    labels = ['State', 'Recovered', 'Deaths', 'Total Cases', 'Suspects', 'Tests']
 
     fig = go.Figure(data=[
-        go.Table(header=dict(values=list(dx.columns),
+        go.Table(header=dict(values=labels,
                              fill_color='#D6D6D6',
                              align=['center', 'center'],
                              font=dict(color='green', size=16)),
                  cells=dict(
-                     values=[dx.state, dx.deaths, dx.totalCases, dx['CFR[%]']],
+                     values=data,
                      fill_color="#E5ECF6",
                      align=['center', 'center'],
                      font=dict(color='firebrick', size=15),
@@ -361,10 +362,11 @@ def plot_table(dx, show=False, save=True):
                      height=30))
     ])
     fig.update_layout(
-        title='Brazil Data by States - {}/{}/{}'.format(
+        title='Brazil Covid-19 - Data by States - {}/{}/{} - {}h'.format(
             date.year,
             date.month,
             date.day,
+            date.hour
         ),
         font=dict(size=16, color="#7f7f7f"),
         margin=dict(l=20, r=20, t=50, b=20),
@@ -372,18 +374,28 @@ def plot_table(dx, show=False, save=True):
         width=600,
         height=1000,
         annotations=[
-            dict(x=0,
-                 y=0.05,
-                 text='    Brazil Total      Deaths: {:,}       Cases: {:,}'.
-                 format(total_deaths, total_cases),
+            dict(x=1,
+                 y=0,
+                 text="Source: https://github.com/wcota/covid19br/blob/master/cases-brazil-states.csv",
                  showarrow=False,
                  xref='paper',
                  yref='paper',
-                 xanchor='left',
-                 yanchor='auto',
+                 xanchor='right',
+                 yanchor='bottom',
                  xshift=0,
                  yshift=0,
-                 font=dict(size=16, color="#7f7f7f"))
+                 font=dict(size=8, color='royalblue')),
+            dict(x=1,
+                 y=0.015,
+                 text="Created by Marcelo Rovai - https://MJRoBot.org",
+                 showarrow=False,
+                 xref='paper',
+                 yref='paper',
+                 xanchor='right',
+                 yanchor='bottom',
+                 xshift=0,
+                 yshift=0,
+                 font=dict(size=8, color='royalblue'))
         ])
 
     if save == True:
@@ -506,8 +518,10 @@ def get_wordometers_covid(country, worldmetersLink):
 def get_brazil_cv_data(date, save=True):
 
     url = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-cities.csv'
+    url_st = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-states.csv'
     url_tm = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-cities-time.csv'
     dt = pd.read_csv(url, error_bad_lines=False)
+    dt_st = pd.read_csv(url_st, error_bad_lines=False)
     dt_tm = pd.read_csv(url_tm, error_bad_lines=False)
     print("\nToday is {}/{}/{}. Dataset with {} observations.\n".format(
         date.year, date.month, date.day, dt.shape[0]))
@@ -531,7 +545,7 @@ def get_brazil_cv_data(date, save=True):
     dt_tm_city = dt_tm.loc[(dt_tm['state'] != 'TOTAL')].copy()
     dt_tm_city.rename(columns={'ibgeID':'COD. IBGE'}, inplace=True)
 
-    return dt, dt_tm, dt_tm_city, dt_state, total_cases, deaths, cfr
+    return dt, dt_st, dt_tm, dt_tm_city, dt_state, total_cases, deaths, cfr
 
 
 
