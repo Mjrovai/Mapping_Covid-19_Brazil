@@ -110,6 +110,7 @@ dt_st_today = dt_st[dt_st.date == date_today]
 dx = dt_st_today.sort_values('deaths', ascending=False)
 plot_table(dx, show=False, save=True)
 
+
 # Timeline of Brazil Total cases cases
 print ('\n[INFO] Plotting Covid-19 Brazil cases')
 
@@ -182,8 +183,22 @@ print ('\n[INFO] Getting Brazilian Geodata\n')
 
 br_shp, br_cities = load_geodata()
 
-# Maping CoronaVirus data
+# Mapping CoronaVirus data
 print ('\n[INFO] Mapping Covid-19 Brazil cases - WAIT \n')
+
+# Plot State Maps
+state = dt_st_today.copy()
+state.rename(columns={'state':'UF'}, inplace = True)
+
+state = pd.merge(br_shp, state, on='UF')
+
+plot_state_map(state, 'deaths')
+plot_state_map(state, 'totalCases')
+plot_state_map(state, 'deaths_per_100k_inhabitants')
+plot_state_map(state, 'tests_per_100k_inhabitants')
+
+'''
+
 
 # Nationwide Analysis
 date = datetime.datetime.today()

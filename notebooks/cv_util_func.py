@@ -631,6 +631,52 @@ def load_roads():
 Functions for Mapping CV-9'
 '''
 
+def plot_state_map(state, feature):
+
+    date = datetime.datetime.today()
+    ax = state.plot(column=feature,
+                    cmap='YlOrRd',
+                    scheme='quantiles',
+                    legend=True,
+                    figsize=(18, 16),
+                    edgecolor='gray',
+                    linewidth=1)
+    plt.title("Covid-19 - {} per State".format(feature.capitalize()),
+              fontsize=20, loc='center')
+    ax.set_axis_off()
+    for idx, row in state.iterrows():
+        plt.annotate(s=row['UF'],
+                     xy=(row.geometry.centroid.x, row.geometry.centroid.y),
+                     horizontalalignment='center',
+                     fontsize=15,
+                     color='gray')
+
+    plt.annotate('Map created by Marcelo Rovai (MJRoBot.org) @{}/{}/{}'.format(
+        date.year, date.month, date.day),
+        xy=(0.55, .17),
+        xycoords='figure fraction',
+        horizontalalignment='left',
+        fontsize=12,
+        color='blue')
+    plt.annotate('Source: https://github.com/wcota/covid19br/blob/master/cases-brazil-states.csv"',
+                 xy=(0.55, .16),
+                 xycoords='figure fraction',
+                 horizontalalignment='left',
+                 fontsize=12,
+                 color='blue')
+    plt.annotate(
+        'License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/',
+        xy=(0.55, .15),
+        xycoords='figure fraction',
+        horizontalalignment='left',
+        fontsize=12,
+        color='blue')
+    
+    file_today = '../images/!cv19_BR_states_'+feature+'.png'
+    plt.savefig(file_today, dpi=300)
+
+
+
 def get_Brazil_data(dt, br_shp, br_cities):
     total_cases = dt.totalCases.sum()
     deaths = dt.deaths.sum()
