@@ -357,6 +357,7 @@ def plot_table(dx, show=False, save=True):
                      fill_color="#E5ECF6",
                      align=['center', 'center'],
                      font=dict(color='firebrick', size=15),
+                     format = [None, ","],
                      height=30))
     ])
     fig.update_layout(
@@ -441,6 +442,7 @@ def plot_geo_table(today, geo, data_geo, show=False, save=True):
                      fill_color="#E5ECF6",
                      align=['right', 'center'],
                      font=dict(color='firebrick', size=15),
+                     format = [None, ","],
                      height=30))
     ])
     fig.update_layout(
