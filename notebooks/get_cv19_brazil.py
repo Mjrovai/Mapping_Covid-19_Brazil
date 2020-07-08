@@ -197,7 +197,6 @@ plot_state_map(state, 'totalCases')
 plot_state_map(state, 'deaths_per_100k_inhabitants')
 plot_state_map(state, 'tests_per_100k_inhabitants')
 
-'''
 
 
 # Nationwide Analysis
@@ -292,5 +291,3 @@ bcr.bar_chart_race(dead_capital,
 
 print ('\n[INFO] End script MJRoBot.org @ {}\n'.format(today)) 
 
-
-'''
