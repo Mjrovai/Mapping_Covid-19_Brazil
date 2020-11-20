@@ -246,7 +246,7 @@ cv_city_t = pd.merge(br_cities, dt_tm_city, on='COD. IBGE')
 deaths_city_t = cv_city_t.loc[cv_city_t['deaths'] != 0].copy()
 dates = list(set(cv_city_t.date))
 dates.sort()
-dates = dates[-2:] 
+dates = dates[-60:] 
 
 create_state_gif(dates, cv_city_t, deaths_city_t, br_shp, 'BR') ; print ('.', end =" ") 
 create_state_gif(dates, cv_city_t, deaths_city_t, br_shp, 'SP'); print ('.', end =" ") 
