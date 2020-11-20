@@ -519,7 +519,7 @@ def get_brazil_cv_data(date, save=True):
 
     url = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-cities.csv'
     url_st = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-states.csv'
-    url_tm = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-cities-time.csv'
+    url_tm = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-cities-time.csv.gz'
     dt = pd.read_csv(url, error_bad_lines=False)
     dt_st = pd.read_csv(url_st, error_bad_lines=False)
     dt_tm = pd.read_csv(url_tm, error_bad_lines=False)
