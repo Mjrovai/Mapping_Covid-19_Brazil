@@ -408,7 +408,7 @@ def plot_table(dx, show=False, save=True):
 def plot_wm_table(country, worldmetersLink, show=False, save=True):
     data_wm, today = get_wordometers_covid(country, worldmetersLink)
     wm_date = str(today.year)+'/'+ str(today.month) +'/'+ str(today.day) +' - '+str(today.hour)+'h'
-    wm = ['Total_infected', 'New_Cases', 'Total_Deaths', 'New_Deaths', 'Recovered', 'Active_Case' , 'Serious_Critical']
+    wm = ['Total Infected', 'New Cases', 'Total Deaths', 'New Deaths', 'Recovered', 'Serious-Critical' , 'Mild Condition']
 
     fig = go.Figure(data=[
         go.Table(header=dict(values=['Wordometers', 'Data'],
@@ -442,7 +442,6 @@ def plot_geo_table(today, geo, data_geo, show=False, save=True):
     
     
     geo_date = str(today.year)+'/'+ str(today.month) +'/'+ str(today.day) +' - '+str(today.hour)+'h'
-    wm = ['Total_infected', 'New_Cases', 'Total_Deaths', 'New_Deaths', 'Recovered', 'Active_Case' , 'Serious_Critical']
 
     fig = go.Figure(data=[
         go.Table(header=dict(values=['Geo Summary', 'Brazil Data'],
@@ -510,7 +509,7 @@ def get_wordometers_covid(country, worldmetersLink):
 
     print('\n{} - Worldometers Daily Data\n'.format(country))
     print(
-        "Today is {} \n- Total infected = {} \n- New Cases = {} \n- Total Deaths = {} \n- New Deaths = {} \n- Recovered = {} \n- Active Cases = {} \n- Serious-Critical = {}"
+        "Today is {} \n- Total infected = {} \n- New Cases = {} \n- Total Deaths = {} \n- New Deaths = {} \n- Recovered = {} \n- Serious-Critical = {} \n- Mild Condition = {}"
         .format(today, *data))
     return data, today
 
