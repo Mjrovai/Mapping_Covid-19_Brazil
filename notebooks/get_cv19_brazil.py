@@ -1,7 +1,7 @@
 '''
 # Covid19 - Brazil (Cities) Basic Geographic Analysis
 - by Marcelo Rovai
-- 27 April 2020
+- 27 April 2020 (Revised @January, 15 2021
 
 Datasets:
 1. Worldometers Daily Data: https://www.worldometers.info/coronavirus/
@@ -54,13 +54,20 @@ mpl.rcParams['figure.dpi']= 150
 plt.style.use('seaborn-paper')
 
 ## definitions
-capital_cities = ['Belém/PA', 
+capital_cities = [
+'São Paulo/SP',
+'Rio de Janeiro/RJ',
+'Manaus/AM',
+'Belém/PA', 
 'Fortaleza/CE',
 'Recife/PE',
-'Manaus/AM',
-'Rio de Janeiro/RJ',
+'Salvador/BA',
+'Belo Horizonte/MG',
+'Porto Alegre/RS',
+'Curitiba/PR',
+'Florianópolis/SC',
+'Brasília/DF',
 'São Luís/MA',
-'São Paulo/SP',
 'Maceió/AL',
 'Rio Branco/AC',
 'Vitória/ES',
@@ -68,18 +75,12 @@ capital_cities = ['Belém/PA',
 'Boa Vista/RR',
 'Porto Velho/RO',
 'João Pessoa/PB',
-'Salvador/BA',
 'Natal/RN',
 'Teresina/PI',
 'Aracaju/SE',
-'Brasília/DF',
 'Goiânia/GO',
-'Porto Alegre/RS',
 'Cuiabá/MT',
-'Curitiba/PR',
 'Palmas/TO',
-'Belo Horizonte/MG',
-'Florianópolis/SC',
 'Campo Grande/MS']
 
 ## Datasets
@@ -129,54 +130,21 @@ for city in top_cities:
 # Timeline New Deaths versus Previus Week    
 plot_mov_ave_deaths_last_week(dt_tm, 'TOTAL', y_scale='linear', n_0=100, mov=7, show=False, save=True)   
 
-for city in top_cities:
-    tst = plot_mov_ave_deaths_last_week_2(dt_tm, city, y_scale='linear', n_0=1, mov=7, show=False, save=True)
-    
-# special graphics
-
-# Recife
-tst = plot_mov_ave_deaths_last_week_2(dt_tm,
-                                    'Recife/PE',
-                                    y_scale='linear',
-                                    n_0=3,
-                                    mov=7,
-                                    graph='line',
-                                    show=False,
-                                    save=True,
-                                    rect=True, 
-                                    x0='2020-05-16',
-                                    x1='2020-05-31',
-                                    text="Lock-Down")
-
-# Fortaleza
-tst = plot_mov_ave_deaths_last_week_2(dt_tm,
-                                    'Fortaleza/CE',
-                                    y_scale='linear',
-                                    n_0=3,
-                                    mov=7,
-                                    graph='line',
-                                    show=False,
-                                    save=True,
-                                    rect=True, 
-                                    x0='2020-05-07',
-                                    x1='2020-05-31',
-                                    text="Lock-Down")
-    
-
-# Sampa
-tst = plot_mov_ave_deaths_last_week_2(dt_tm,
-                                    'São Paulo/SP',
-                                    y_scale='linear',
-                                    n_0=3,
-                                    mov=7,
-                                    graph='line',
-                                    show=False,
-                                    save=True,
-                                    rect=True, 
-                                    x0='2020-05-20',
-                                    x1='2020-05-25',
-                                    text="Holidays")
-    
+for city in capital_cities:
+    #tst = plot_mov_ave_deaths_last_week_2(dt_tm, city, y_scale='linear', n_0=1, mov=7, show=False, save=True)   
+    tst = plot_mov_ave_deaths_last_week_2(dt_tm,
+                                        city,
+                                        y_scale='linear',
+                                        n_0=3,
+                                        mov=7,
+                                        graph='line',
+                                        show=False,
+                                        save=True,
+                                        rect=True, 
+                                        x0='2020-05-16',
+                                        x1='2020-05-31',
+                                        text="Lock-Down")
+ 
       
 # GeoData (Brasil & Municipalities)
 print ('\n[INFO] Getting Brazilian Geodata\n') 
@@ -221,13 +189,13 @@ data_geo = [
 plot_geo_table(today, geo, data_geo, show=False, save=True)
 
 plt_Brasil_cities(cv_city, deaths_city, date, total_cases, deaths, cfr, br_shp, br_cities, deaths_only=False)
-plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, n=1)
-plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='deaths', n=4)
+plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, n=0.05)
+plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='deaths', n=1)
 
 # Other Pandemic metrics maps
-plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='TotalCases/1M pop', n=0.1 )
-plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='Deaths/1M pop', n=1 )
-plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='CFR[%]', n=5)
+plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='TotalCases/1M pop', n=0.001)
+plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='Deaths/1M pop', n=0.1 )
+plt_Brasil_cv_metrics(cv_city_pnt, deaths_city_pnt, date, total_cases, deaths, cfr, br_shp, br_cities, metrics='CFR[%]', n=30)
 
 
 # Selected State Analysis
@@ -265,6 +233,7 @@ conv_gif_to_mp4('MG', fps=5); print ('.', end =" ")
 conv_gif_to_mp4('CE', fps=5); print ('.') 
 
 '''
+print ('\n[INFO] Creating Bar Chart Race for cities - WAIT \n')
 
 dead_city = get_dataframe(df=dt_tm,
                           cities=top_cities,
@@ -289,6 +258,6 @@ bcr.bar_chart_race(dead_capital,
                   filename='../videos/capital_cities_deaths_100K.mp4')
 
 
-
+today = datetime.datetime.today()
 print ('\n[INFO] End script MJRoBot.org @ {}\n'.format(today)) 
 

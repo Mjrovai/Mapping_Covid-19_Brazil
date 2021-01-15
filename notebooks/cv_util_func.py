@@ -630,7 +630,7 @@ def load_roads():
 Functions for Mapping CV-9'
 '''
 
-def plot_state_map(state, feature):
+def plot_state_map(state, feature, show=False, save=True):
 
     date = datetime.datetime.today()
     ax = state.plot(column=feature,
@@ -670,9 +670,12 @@ def plot_state_map(state, feature):
         horizontalalignment='left',
         fontsize=12,
         color='blue')
-    
-    file_today = '../images/!cv19_BR_states_'+feature+'.png'
-    plt.savefig(file_today, dpi=300)
+        
+    if save == True:
+        file_today = '../images/!cv19_BR_states_'+feature+'.png'
+        plt.savefig(file_today, dpi=300)
+    if show == True:
+        plt.show()
 
 
 
