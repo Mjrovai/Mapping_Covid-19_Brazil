@@ -238,7 +238,7 @@ cv_rj, deaths_rj, rj_total_cases, rj_deaths = get_state_info(cv_city, dt_state, 
 cv_mg, deaths_mg, mg_total_cases, mg_deaths = get_state_info(cv_city, dt_state, br_shp, br_cities, 'MG')
 cv_ce, deaths_ce, ce_total_cases, ce_deaths = get_state_info(cv_city, dt_state, br_shp, br_cities, 'CE')
 
-     
+'''     
 # Creating Gifs
 print ('\n[INFO] Creating GIFs - WAIT ', end =" ")  
 
@@ -264,6 +264,7 @@ conv_gif_to_mp4('RJ', fps=5); print ('.', end =" ")
 conv_gif_to_mp4('MG', fps=5); print ('.', end =" ") 
 conv_gif_to_mp4('CE', fps=5); print ('.') 
 
+'''
 
 dead_city = get_dataframe(df=dt_tm,
                           cities=top_cities,
